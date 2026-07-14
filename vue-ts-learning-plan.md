@@ -92,9 +92,75 @@ function add(a: number, b: number): number {
 
 ### 练习题
 
-- [x] 计数器组件（+1 / -1 / 重置）
-- [x] 输入框 + 字数显示
-- [x] 超过 10 字提示"太长了"
+#### Q1: 计数器组件（+1 / -1 / 重置）
+```vue
+<script setup lang="ts">
+import { ref, computed } from 'vue'
+
+let count = ref(0)
+
+function add() { count.value++ }
+function minus() { count.value-- }
+function reset() { count.value = 0 }
+
+let message = computed(() => {
+  if (count.value === 0) return '空空如也'
+  if (count.value > 10) return '太多了！'
+  return `当前是 ${count.value}`
+})
+</script>
+
+<template>
+  <div>
+    <h1>{{ message }}</h1>
+    <p>计数：{{ count }}</p>
+    <button @click="minus">-</button>
+    <button @click="add">+</button>
+    <button @click="reset">重置</button>
+  </div>
+</template>
+```
+✅ 掌握了：`ref()` 定义响应式变量、`@click` 绑定事件、`computed` 派生状态
+
+#### Q2: 输入框 + 字数统计
+```vue
+<script setup lang="ts">
+import { ref, computed } from 'vue'
+
+let text = ref('')
+let charCount = computed(() => text.value.length)
+</script>
+
+<template>
+  <input v-model="text" placeholder="在这里输入..." />
+  <p>你输入了 {{ charCount }} 个字</p>
+</template>
+```
+✅ 掌握了：`v-model` 双向绑定、模板中 ref 自动 unwrap 不用 `.value`
+
+#### Q3: 字数超限提示
+```vue
+<script setup lang="ts">
+import { ref, computed } from 'vue'
+
+let text = ref('')
+let charCount = computed(() => text.value.length)
+
+let hint = computed(() => {
+  if (charCount.value === 0) return ''
+  if (charCount.value > 10) return '太长了！'
+  return `${charCount.value}/10`
+})
+</script>
+
+<template>
+  <input v-model="text" placeholder="最多输入 10 个字..." />
+  <p v-if="hint" :style="{ color: hint === '太长了！' ? 'red' : 'green' }">
+    {{ hint }}
+  </p>
+</template>
+```
+✅ 掌握了：`v-if` 条件渲染、动态样式绑定
 
 ### 复盘问题
 
@@ -103,15 +169,24 @@ function add(a: number, b: number): number {
 
 ### 学习笔记
 
-> `<script setup lang="ts">` 是 Vue 3 组合式 API 的入口，所有逻辑写在一起。
-> `ref()` 让数据变"活"——代码里加 `.value`，模板里直接写名字。
-> `computed()` 有缓存，依赖不变不重算；纯计算用 computed，有副作用用 function。
-> `v-model` 双向绑定，`v-if` 条件渲染，`@click` 事件绑定。
+> **`<script setup lang="ts">`** — Vue 3 组合式 API 入口，所有逻辑写在一起，天然有 TS 类型保护。
+>
+> **`ref()` 规则：** 代码里访问必须加 `.value`（如 `count.value++`），模板里自动 unwrap 不用加（直接写 `{{ count }}`）。这是最容易犯的错误——忘记 `.value` 不报错但也不更新，多加 `.value` 在模板里会显示 `[object Object]`。
+>
+> **`computed()` vs `function`：** computed 有缓存，依赖不变不重算，适合纯计算；function 每次调用都执行，适合有副作用的（发请求、操作 DOM）。
+>
+> **`v-model` 双向绑定：** 输入框内容变了 ref 自动跟着变，ref 变了输入框也自动变。底层是 `:value` + `@input` 的语法糖。
+>
+> **`v-if` 条件渲染：** 不是隐藏元素，是真的从 DOM 里删除/添加。
 
 
 ### 费曼复述
 
-> Session 2 学了 Vue 3 组件基础：`<script setup>` 语法、`ref()` 响应式变量（代码加 .value 模板不加）、`computed()` 计算属性（有缓存）、`v-model` 双向绑定、`@click` 事件绑定。完成了计数器、字数统计、超限提示三个练习。
+> Session 2 学了 Vue 3 组件基础，核心就三件事：
+> 1. **ref** — 让数据变"活"。记住口诀：**代码加 .value，模板不加**。写了计数器（+1/-1/重置）和字数统计两个练习。
+> 2. **computed** — 由其他值算出来的新值，有缓存。比如根据 count 显示不同文字、根据输入长度显示提示。
+> 3. **v-model + v-if** — v-model 是双向绑定（输入框↔变量），v-if 是条件渲染（满足条件才显示）。
+> 三个练习串起来就是：ref 存数据 → computed 派生状态 → v-model/v-if/@click 展示和交互。
 
 
 ---
