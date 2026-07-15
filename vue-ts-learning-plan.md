@@ -3,7 +3,7 @@
 > 目标：零基础 → 能用 TS 写 Vue 项目
 > 总时长：约 20 小时（10 次 × 2 小时）
 > 开始日期：2026-07-13
-> 当前进度：第 3 次 🔲 未开始
+> 当前进度：第 3 次 ✅ 已完成
 
 ---
 
@@ -13,7 +13,7 @@
 |------|------|---------|------|
 | 1️⃣ | TS 基础类型 | 2h | ✅ 已完成 |
 | 2️⃣ | Vue 3 组件基础 | 2h | ✅ 已完成 |
-| 3️⃣ | Props/Emits 类型 | 2h | 🔲 未开始 |
+| 3️⃣ | Props/Emits 类型 | 2h | ✅ 已完成 |
 | 4️⃣ | 响应式系统类型推断 | 2h | 🔲 未开始 |
 | 5️⃣ | 生命周期 & 监听器 | 2h | 🔲 未开始 |
 | 6️⃣ | Composable 逻辑复用 | 2h | 🔲 未开始 |
@@ -203,23 +203,35 @@ let hint = computed(() => {
 
 ### 练习题
 
-- [ ] UserProfile 组件（接收 user prop）
-- [ ] Button 组件（type/size/disabled）
-- [ ] 子组件事件传值带类型
+- [x] UserProfile 组件（接收 user prop）
+- [x] Button 组件（type/size/disabled）
+- [x] 子组件事件传值带类型
 
 ### 复盘问题
 
-- [ ] defineProps 后面那个 `<{ ... }>` 是干嘛的？
-- [ ] emits 的类型怎么写？
+- [x] defineProps 后面那个 `<{ ... }>` 是干嘛的？→ TypeScript 泛型，声明 prop 的类型契约，省略后变成 any
+- [x] emits 的类型怎么写？→ `(e: '事件名', 参数: 类型): void`，每个事件一行签名
 
 ### 学习笔记
 
+> **`defineProps<{ ... }>()`** — 泛型声明就是类型契约。父组件传错类型 IDE 直接标红，比运行时才发现错误强太多。
 >
+> **`withDefaults`** — 给可选 prop 设默认值，和 `defineProps` 配合使用。注意 `withDefaults` 的第二个参数是默认值对象，不是 prop 里的 `default` 属性。
+>
+> **`defineEmits` 泛型写法** — `(e: '事件名', 参数: 类型): void`，每个事件一行签名。子组件调 `emit('update', 42)` 时 TS 会检查 42 是不是 number 类型。
+>
+> **父子数据流** — 父传 prop（↓），子发事件（↑）。全链路类型安全，从父组件传值到子组件发事件，每一步都有 TS 保护。
+>
+> **踩坑记录** — `computed` 必须从 vue 导入，否则运行时 `computed is not defined` 导致整个 app 白屏。模板里如果用 `const props = defineProps()` 定义的变量，访问时必须加 `props.` 前缀。
 
 
 ### 费曼复述
 
->
+> Session 3 学了父子组件通信的类型安全，核心就三件事：
+> 1. **defineProps** — 父→子传值。用泛型声明 prop 类型，`<script setup>` 里 `const props = defineProps<{ user: User }>()`，模板里通过 `props.user.name` 访问。可选 prop 用 `withDefaults` 设默认值。
+> 2. **defineEmits** — 子→父传事件。用泛型定义事件签名 `(e: '事件名', 参数: 类型): void`，子组件 `emit('update', 42)` 时 TS 自动检查类型。
+> 3. **完整数据流闭环** — 父组件传 prop 给子组件 ↓，子组件通过 emit 向上发事件 ↑，父组件监听事件并更新数据。整个过程都有类型保护。
+> 三个练习串起来：UserProfile（只收 prop）→ Button（prop + 默认值 + slot）→ TodoItem/TodoList（prop + emit 双向通信），覆盖了父子组件通信的所有模式。
 
 
 ---
@@ -449,7 +461,7 @@ let hint = computed(() => {
 |------|------|------|
 | 7/13 | 第 1 次：TS 基础 | ✅ 已完成 |
 | 7/14 | 第 2 次：Vue 组件基础 | ✅ 已完成 |
-| 7/15 | 第 3 次：Props/Emits | 🔲 |
+| 7/15 | 第 3 次：Props/Emits | ✅ 已完成 |
 | 7/16 | 第 4 次：响应式类型 | 🔲 |
 | 7/17 | 第 5 次：生命周期 | 🔲 |
 | 7/18 | 第 6 次：Composable | 🔲 |
@@ -460,4 +472,4 @@ let hint = computed(() => {
 
 ---
 
-*最后更新：2026-07-14*
+*最后更新：2026-07-15*
