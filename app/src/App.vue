@@ -3,6 +3,10 @@ import { ref, computed } from 'vue'
 import UserProfile from './components/UserProfile.vue'
 import Button from './components/Button.vue'
 import TodoList from './components/TodoList.vue'
+import WatchDemo from './components/WatchDemo.vue'
+import TextWatchDemo from './components/TextWatchDemo.vue'
+import WatchEffectDemo from './components/WatchEffectDemo.vue'
+import LifecycleDemo from './components/LifecycleDemo.vue'
 
 // ===== 计数器部分 =====
 let count = ref(0)
@@ -81,6 +85,30 @@ const demoUser = ref({
     <section style="margin-bottom: 30px; border: 1px solid #eee; padding: 16px; border-radius: 8px;">
       <h2>📝 Q3: TodoList（defineEmits）</h2>
       <TodoList />
+    </section>
+
+    <!-- Q4: WatchDemo -->
+    <section style="margin-bottom: 30px; border: 1px solid #eee; padding: 16px; border-radius: 8px;">
+      <h2>⏱️ Q4-1: WatchDemo（watch 数字）</h2>
+      <WatchDemo />
+    </section>
+
+    <!-- Q5: TextWatchDemo -->
+    <section style="margin-bottom: 30px; border: 1px solid #eee; padding: 16px; border-radius: 8px;">
+      <h2>⏱️ Q4-2: TextWatchDemo（watch 字符串）</h2>
+      <TextWatchDemo />
+    </section>
+
+    <!-- Q6: WatchEffectDemo -->
+    <section style="margin-bottom: 30px; border: 1px solid #eee; padding: 16px; border-radius: 8px;">
+      <h2>⏱️ Q4-3: WatchEffectDemo（自动追踪）</h2>
+      <WatchEffectDemo />
+    </section>
+
+    <!-- Q7: LifecycleDemo -->
+    <section style="margin-bottom: 30px; border: 1px solid #eee; padding: 16px; border-radius: 8px;">
+      <h2>⏱️ Q4-4: LifecycleDemo（生命周期 + 防抖搜索）</h2>
+      <LifecycleDemo />
     </section>
   </div>
 </template>

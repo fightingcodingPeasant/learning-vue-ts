@@ -169,8 +169,8 @@ interface Todo {
 defineProps<{ todo: Todo }>()
 
 const emit = defineEmits<{
-  toggle: () => void
-  remove: (id: string) => void
+  (e: 'toggle'): void
+  (e: 'remove', id: string): void
 }>()
 </script>
 

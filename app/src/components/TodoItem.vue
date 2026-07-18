@@ -13,8 +13,8 @@ defineProps<{
 
 // 定义可触发的事件及参数类型
 const emit = defineEmits<{
-  toggle: () => void
-  remove: (id: string) => void
+  (e: 'toggle'): void
+  (e: 'remove', id: string): void
 }>()
 </script>
 
