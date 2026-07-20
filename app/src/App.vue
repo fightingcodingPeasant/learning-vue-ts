@@ -7,6 +7,8 @@ import WatchDemo from './components/WatchDemo.vue'
 import TextWatchDemo from './components/TextWatchDemo.vue'
 import WatchEffectDemo from './components/WatchEffectDemo.vue'
 import LifecycleDemo from './components/LifecycleDemo.vue'
+import ComposableCounterDemo from './components/ComposableCounterDemo.vue'
+import TodoListWithStorage from './components/TodoListWithStorage.vue'
 
 // ===== 计数器部分 =====
 let count = ref(0)
@@ -109,6 +111,18 @@ const demoUser = ref({
     <section style="margin-bottom: 30px; border: 1px solid #eee; padding: 16px; border-radius: 8px;">
       <h2>⏱️ Q4-4: LifecycleDemo（生命周期 + 防抖搜索）</h2>
       <LifecycleDemo />
+    </section>
+
+    <!-- Q8: ComposableCounterDemo -->
+    <section style="margin-bottom: 30px; border: 1px solid #eee; padding: 16px; border-radius: 8px;">
+      <h2>🔄 Q5-1: ComposableCounterDemo（useCounter）</h2>
+      <ComposableCounterDemo />
+    </section>
+
+    <!-- Q9: TodoListWithStorage -->
+    <section style="margin-bottom: 30px; border: 1px solid #eee; padding: 16px; border-radius: 8px;">
+      <h2>💾 Q5-2: TodoListWithStorage（useLocalStorage）</h2>
+      <TodoListWithStorage />
     </section>
   </div>
 </template>
