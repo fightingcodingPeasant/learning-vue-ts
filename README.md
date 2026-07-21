@@ -3,7 +3,7 @@
 > 目标：零基础 → 能用 TS 写 Vue 项目
 > 总时长：约 20 小时（10 次 × 2 小时）
 > 开始日期：2026-07-13
-> 当前进度：第 5 次 ✅ 已完成
+> 当前进度：第 6 次 ✅ 已完成
 
 ---
 
@@ -16,7 +16,7 @@
 | 3️⃣ | Props/Emits 类型 | 2h | ✅ 已完成 |
 | 4️⃣ | Watchers & 生命周期 | 2h | ✅ 已完成 |
 | 5️⃣ | Composable 逻辑复用 | 2h | ✅ 已完成 |
-| 6️⃣ | 响应式系统类型推断 | 2h | 🔲 未开始 |
+| 6️⃣ | 响应式系统类型推断 | 2h | ✅ 已完成 |
 | 7️⃣ | 路由 + Pinia 类型安全 | 2h | 🔲 未开始 |
 | 8️⃣ | 实战：TodoList | 2h | 🔲 未开始 |
 | 9️⃣ | 表单验证 + 指令 | 2h | 🔲 未开始 |
@@ -35,7 +35,7 @@
 | 7/15 | 第 3 次：Props/Emits | ✅ 已完成 |
 | 7/18 | 第 4 次：Watchers & 生命周期 | ✅ 已完成 |
 | 7/19 | 第 5 次：Composable | ✅ 已完成 |
-| 7/20 | 第 6 次：响应式类型 | 🔲 |
+| 7/20 | 第 6 次：响应式类型 | ✅ 已完成 |
 | 7/21 | 第 7 次：路由+Pinia | 🔲 |
 | 7/22 | 第 8 次：Todo 实战 | 🔲 |
 | 7/23 | 第 9 次：表单+指令 | 🔲 |
@@ -47,19 +47,32 @@
 
 ```
 app/src/components/
-├── Button.vue          # Session 3 — withDefaults
-├── LifecycleDemo.vue   # Session 4 — 生命周期 + 防抖搜索
-├── TodoItem.vue        # Session 3 — defineEmits
-├── TodoList.vue        # Session 3 — 父组件管理数据
-├── UserProfile.vue     # Session 3 — defineProps
-├── WatchDemo.vue       # Session 4 — watch 监听数字
-├── WatchEffectDemo.vue # Session 4 — watchEffect 自动追踪
-├── TextWatchDemo.vue   # Session 4 — watch 监听字符串
+├── Button.vue              # Session 3 — withDefaults
+├── ComposableCounterDemo.vue    # Session 5 — useCounter
+├── LifecycleDemo.vue       # Session 4 — 生命周期 + 防抖搜索
+├── ReactiveDemo.vue        # Session 6 — reactive 类型推导
+├── ReadonlyDemo.vue        # Session 6 — readonly 只读
+├── RefTypeDemo.vue         # Session 6 — ref<T> 泛型
+├── ShallowRefDemo.vue      # Session 6 — shallowRef vs ref
+├── TodoItem.vue            # Session 3 — defineEmits
+├── TodoList.vue            # Session 3 — 父组件管理数据
+├── TodoListWithStorage.vue # Session 5 — useLocalStorage
+├── UserProfile.vue         # Session 3 — defineProps
+├── WatchDemo.vue           # Session 4 — watch 监听数字
+├── WatchEffectDemo.vue     # Session 4 — watchEffect 自动追踪
+└── TextWatchDemo.vue       # Session 4 — watch 监听字符串
+
+app/src/composables/
+├── useCounter.ts           # Session 5 — 计数器逻辑
+└── useLocalStorage.ts      # Session 5 — localStorage 持久化
+
 sessions/
 ├── session-01-ts-basics.md
 ├── session-02-vue-components.md
 ├── session-03-props-emits.md
-└── session-04-watch-lifecycle.md
+├── session-04-watch-lifecycle.md
+├── session-05-composable.md
+└── session-06-reactive-types.md
 ```
 
 ---
@@ -74,4 +87,4 @@ sessions/
 
 ---
 
-*最后更新：2026-07-18 — Session 4 完成（Watchers & 生命周期）*
+*最后更新：2026-07-20 — Session 6 完成（响应式系统类型推断）*

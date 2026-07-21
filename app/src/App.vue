@@ -9,6 +9,10 @@ import WatchEffectDemo from './components/WatchEffectDemo.vue'
 import LifecycleDemo from './components/LifecycleDemo.vue'
 import ComposableCounterDemo from './components/ComposableCounterDemo.vue'
 import TodoListWithStorage from './components/TodoListWithStorage.vue'
+import RefTypeDemo from './components/RefTypeDemo.vue'
+import ReactiveDemo from './components/ReactiveDemo.vue'
+import ShallowRefDemo from './components/ShallowRefDemo.vue'
+import ReadonlyDemo from './components/ReadonlyDemo.vue'
 
 // ===== 计数器部分 =====
 let count = ref(0)
@@ -123,6 +127,30 @@ const demoUser = ref({
     <section style="margin-bottom: 30px; border: 1px solid #eee; padding: 16px; border-radius: 8px;">
       <h2>💾 Q5-2: TodoListWithStorage（useLocalStorage）</h2>
       <TodoListWithStorage />
+    </section>
+
+    <!-- Q10: RefTypeDemo -->
+    <section style="margin-bottom: 30px; border: 1px solid #eee; padding: 16px; border-radius: 8px;">
+      <h2>🔤 Q6-1: RefTypeDemo（ref&lt;T&gt;泛型）</h2>
+      <RefTypeDemo />
+    </section>
+
+    <!-- Q11: ReactiveDemo -->
+    <section style="margin-bottom: 30px; border: 1px solid #eee; padding: 16px; border-radius: 8px;">
+      <h2>📦 Q6-2: ReactiveDemo（reactive类型推导）</h2>
+      <ReactiveDemo />
+    </section>
+
+    <!-- Q12: ShallowRefDemo -->
+    <section style="margin-bottom: 30px; border: 1px solid #eee; padding: 16px; border-radius: 8px;">
+      <h2>⚡ Q6-3: ShallowRefDemo（shallowRef vs ref）</h2>
+      <ShallowRefDemo />
+    </section>
+
+    <!-- Q13: ReadonlyDemo -->
+    <section style="margin-bottom: 30px; border: 1px solid #eee; padding: 16px; border-radius: 8px;">
+      <h2>🔒 Q6-4: ReadonlyDemo（readonly只读）</h2>
+      <ReadonlyDemo />
     </section>
   </div>
 </template>
