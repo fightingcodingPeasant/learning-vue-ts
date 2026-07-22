@@ -13,6 +13,8 @@ import RefTypeDemo from './components/RefTypeDemo.vue'
 import ReactiveDemo from './components/ReactiveDemo.vue'
 import ShallowRefDemo from './components/ShallowRefDemo.vue'
 import ReadonlyDemo from './components/ReadonlyDemo.vue'
+import RouterDemo from './components/RouterDemo.vue'
+import PiniaCartDemo from './components/PiniaCartDemo.vue'
 
 // ===== 计数器部分 =====
 let count = ref(0)
@@ -151,6 +153,18 @@ const demoUser = ref({
     <section style="margin-bottom: 30px; border: 1px solid #eee; padding: 16px; border-radius: 8px;">
       <h2>🔒 Q6-4: ReadonlyDemo（readonly只读）</h2>
       <ReadonlyDemo />
+    </section>
+
+    <!-- Q14: RouterDemo -->
+    <section style="margin-bottom: 30px; border: 1px solid #eee; padding: 16px; border-radius: 8px;">
+      <h2>🧭 Q7-1: RouterDemo（Vue Router）</h2>
+      <RouterDemo />
+    </section>
+
+    <!-- Q15: PiniaCartDemo -->
+    <section style="margin-bottom: 30px; border: 1px solid #eee; padding: 16px; border-radius: 8px;">
+      <h2>🛒 Q7-2: PiniaCartDemo（Pinia Store）</h2>
+      <PiniaCartDemo />
     </section>
   </div>
 </template>
