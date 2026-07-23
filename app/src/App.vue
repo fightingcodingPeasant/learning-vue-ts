@@ -15,6 +15,7 @@ import ShallowRefDemo from './components/ShallowRefDemo.vue'
 import ReadonlyDemo from './components/ReadonlyDemo.vue'
 import RouterDemo from './components/RouterDemo.vue'
 import PiniaCartDemo from './components/PiniaCartDemo.vue'
+import TodoApp from './components/TodoApp.vue'
 
 // ===== 计数器部分 =====
 let count = ref(0)
@@ -165,6 +166,12 @@ const demoUser = ref({
     <section style="margin-bottom: 30px; border: 1px solid #eee; padding: 16px; border-radius: 8px;">
       <h2>🛒 Q7-2: PiniaCartDemo（Pinia Store）</h2>
       <PiniaCartDemo />
+    </section>
+
+    <!-- Q16: TodoApp — 综合实战 -->
+    <section style="margin-bottom: 30px; border: 1px solid #eee; padding: 16px; border-radius: 8px;">
+      <h2>✅ Q8: TodoApp（Session 8 综合实战）</h2>
+      <TodoApp />
     </section>
   </div>
 </template>
