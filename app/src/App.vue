@@ -16,6 +16,8 @@ import ReadonlyDemo from './components/ReadonlyDemo.vue'
 import RouterDemo from './components/RouterDemo.vue'
 import PiniaCartDemo from './components/PiniaCartDemo.vue'
 import TodoApp from './components/TodoApp.vue'
+import RegisterForm from './components/RegisterForm.vue'
+import CustomDirectiveDemo from './components/CustomDirectiveDemo.vue'
 
 // ===== 计数器部分 =====
 let count = ref(0)
@@ -96,82 +98,94 @@ const demoUser = ref({
       <TodoList />
     </section>
 
-    <!-- Q4: WatchDemo -->
+    <!-- Q4-1: WatchDemo -->
     <section style="margin-bottom: 30px; border: 1px solid #eee; padding: 16px; border-radius: 8px;">
       <h2>⏱️ Q4-1: WatchDemo（watch 数字）</h2>
       <WatchDemo />
     </section>
 
-    <!-- Q5: TextWatchDemo -->
+    <!-- Q4-2: TextWatchDemo -->
     <section style="margin-bottom: 30px; border: 1px solid #eee; padding: 16px; border-radius: 8px;">
       <h2>⏱️ Q4-2: TextWatchDemo（watch 字符串）</h2>
       <TextWatchDemo />
     </section>
 
-    <!-- Q6: WatchEffectDemo -->
+    <!-- Q4-3: WatchEffectDemo -->
     <section style="margin-bottom: 30px; border: 1px solid #eee; padding: 16px; border-radius: 8px;">
       <h2>⏱️ Q4-3: WatchEffectDemo（自动追踪）</h2>
       <WatchEffectDemo />
     </section>
 
-    <!-- Q7: LifecycleDemo -->
+    <!-- Q4-4: LifecycleDemo -->
     <section style="margin-bottom: 30px; border: 1px solid #eee; padding: 16px; border-radius: 8px;">
       <h2>⏱️ Q4-4: LifecycleDemo（生命周期 + 防抖搜索）</h2>
       <LifecycleDemo />
     </section>
 
-    <!-- Q8: ComposableCounterDemo -->
+    <!-- Q5-1: ComposableCounterDemo -->
     <section style="margin-bottom: 30px; border: 1px solid #eee; padding: 16px; border-radius: 8px;">
       <h2>🔄 Q5-1: ComposableCounterDemo（useCounter）</h2>
       <ComposableCounterDemo />
     </section>
 
-    <!-- Q9: TodoListWithStorage -->
+    <!-- Q5-2: TodoListWithStorage -->
     <section style="margin-bottom: 30px; border: 1px solid #eee; padding: 16px; border-radius: 8px;">
       <h2>💾 Q5-2: TodoListWithStorage（useLocalStorage）</h2>
       <TodoListWithStorage />
     </section>
 
-    <!-- Q10: RefTypeDemo -->
+    <!-- Q6-1: RefTypeDemo -->
     <section style="margin-bottom: 30px; border: 1px solid #eee; padding: 16px; border-radius: 8px;">
       <h2>🔤 Q6-1: RefTypeDemo（ref&lt;T&gt;泛型）</h2>
       <RefTypeDemo />
     </section>
 
-    <!-- Q11: ReactiveDemo -->
+    <!-- Q6-2: ReactiveDemo -->
     <section style="margin-bottom: 30px; border: 1px solid #eee; padding: 16px; border-radius: 8px;">
       <h2>📦 Q6-2: ReactiveDemo（reactive类型推导）</h2>
       <ReactiveDemo />
     </section>
 
-    <!-- Q12: ShallowRefDemo -->
+    <!-- Q6-3: ShallowRefDemo -->
     <section style="margin-bottom: 30px; border: 1px solid #eee; padding: 16px; border-radius: 8px;">
       <h2>⚡ Q6-3: ShallowRefDemo（shallowRef vs ref）</h2>
       <ShallowRefDemo />
     </section>
 
-    <!-- Q13: ReadonlyDemo -->
+    <!-- Q6-4: ReadonlyDemo -->
     <section style="margin-bottom: 30px; border: 1px solid #eee; padding: 16px; border-radius: 8px;">
       <h2>🔒 Q6-4: ReadonlyDemo（readonly只读）</h2>
       <ReadonlyDemo />
     </section>
 
-    <!-- Q14: RouterDemo -->
+    <!-- Q7-1: RouterDemo -->
     <section style="margin-bottom: 30px; border: 1px solid #eee; padding: 16px; border-radius: 8px;">
       <h2>🧭 Q7-1: RouterDemo（Vue Router）</h2>
       <RouterDemo />
     </section>
 
-    <!-- Q15: PiniaCartDemo -->
+    <!-- Q7-2: PiniaCartDemo -->
     <section style="margin-bottom: 30px; border: 1px solid #eee; padding: 16px; border-radius: 8px;">
       <h2>🛒 Q7-2: PiniaCartDemo（Pinia Store）</h2>
       <PiniaCartDemo />
     </section>
 
-    <!-- Q16: TodoApp — 综合实战 -->
+    <!-- Q8: TodoApp -->
     <section style="margin-bottom: 30px; border: 1px solid #eee; padding: 16px; border-radius: 8px;">
       <h2>✅ Q8: TodoApp（Session 8 综合实战）</h2>
       <TodoApp />
+    </section>
+
+    <!-- Q9-1: RegisterForm -->
+    <section style="margin-bottom: 30px; border: 1px solid #eee; padding: 16px; border-radius: 8px;">
+      <h2>📝 Q9-1: RegisterForm（表单验证）</h2>
+      <RegisterForm />
+    </section>
+
+    <!-- Q9-2: CustomDirectiveDemo -->
+    <section style="margin-bottom: 30px; border: 1px solid #eee; padding: 16px; border-radius: 8px;">
+      <h2>🎨 Q9-2: CustomDirectiveDemo（自定义指令）</h2>
+      <CustomDirectiveDemo />
     </section>
   </div>
 </template>
